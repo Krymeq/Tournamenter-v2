@@ -1,0 +1,41 @@
+$main-color: #fff;
+$text-color: #000080;
+$secondary-color: #fc0;
+$error-color: #f00;
+$highlight-color: #44b;
+
+@mixin disable-autofill($backgroundColor, $textColor) {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px $backgroundColor inset !important;
+        -webkit-box-shadow: 0 0 0 30px $backgroundColor inset !important;
+        -webkit-text-fill-color: $textColor !important;
+    }
+}
+
+@mixin background {
+    background-image: url("./assets/cup_grayscaled.jpg");
+    background-color: rgba($main-color, 0.83);
+    background-blend-mode: lighten;
+    background-position: center center;
+    background-size: cover;
+}
+
+@mixin button-layout($background, $textColor, $highlightColor) {
+    padding: 9px 9px;
+    min-width: 100px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: $background;
+    color: $textColor;
+    transition: all 0.1s ease-in;
+    &:hover {
+        cursor: pointer;
+        background-color: $highlightColor;
+    }
+}
+
+

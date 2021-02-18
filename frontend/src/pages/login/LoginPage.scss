@@ -1,0 +1,74 @@
+@import "../../global.scss";
+
+@mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-root {
+    @include center-content();
+    color: $text-color;
+    min-height: 100%;
+
+    form {
+        img {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 400px) {
+            width: 100%;
+            padding: 30px 20px;
+        }
+
+        @include center-content();
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 2px #ccc;
+        padding: 30px 50px;
+        background-color: $main-color;
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0px;
+            position: relative;
+            font-size: 12px;
+            span {
+                position: absolute;
+                bottom: -14px;
+                font-size: 12px;
+                color: $error-color;
+            }
+        }
+
+        .label-pane {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $secondary-color;
+            background-color: $main-color;
+            padding: 6px;
+            font-size: 16px;
+            @include disable-autofill($main-color, $text-color);
+        }
+
+        .button-pane {
+            padding-top: 19px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            .primary-button {
+                @include button-layout($text-color, $main-color, $highlight-color);
+            }
+
+            .secondary-button {
+                @include button-layout($main-color, $text-color, $secondary-color);
+            }
+        }
+    }
+}
