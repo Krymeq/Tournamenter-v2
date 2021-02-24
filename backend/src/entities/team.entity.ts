@@ -1,4 +1,4 @@
-import { Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TeamMembership } from "./team-membership.entity";
 import { Tournament } from "./tournament.entity";
 
@@ -7,9 +7,13 @@ export class Team {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column()
+    name: string;
+
     @OneToMany(() => TeamMembership, membership => membership.team)
     members: TeamMembership[];
 
     @ManyToOne(()=>Tournament)
+    @JoinColumn({name: 'tournament_id'})
     tournament: Tournament;
 }

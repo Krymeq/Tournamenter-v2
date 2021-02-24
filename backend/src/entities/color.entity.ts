@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Division } from "./division.entity";
 
 @Entity()
 export class Color {
@@ -7,4 +8,11 @@ export class Color {
 
     @Column()
     color: string;
+
+    @Column()
+    layer: number;
+    
+    @ManyToOne(() => Division)
+    @JoinColumn({name: 'division_id'})
+    division: Division;
 }

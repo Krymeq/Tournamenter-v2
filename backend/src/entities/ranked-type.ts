@@ -1,5 +1,5 @@
 export enum RankedType {
-    none,
-    pointBased,
-    divisionBased
+    NONE,
+    POINT_BASED,
+    DIVISION_BASED
 }

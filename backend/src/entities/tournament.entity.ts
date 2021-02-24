@@ -2,6 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColum
 import { User } from "./user.entity";
 import { RankedType } from "./ranked-type";
 import { Team } from "./team.entity";
+import { Division } from "./division.entity";
 
 @Entity()
 export class Tournament {
@@ -20,16 +21,19 @@ export class Tournament {
     @Column({type: 'int', name: 'team_size'})
     teamSize: number;
 
-    @Column({name: 'start_date'})
+    @Column({name: 'start_date', nullable: true})
     startDate: Date;
 
     @Column()
     ranked: RankedType;
     
-    @ManyToOne(() => User)
+    @ManyToOne(() => User, user => user.hostedTournaments)
     @JoinColumn({name: 'host_id'})
     host: User;
 
     @OneToMany(() => Team, team => team.tournament)
     teams: Team[];
+
+    @OneToMany(() => Division, division => division.tournament)
+    divisions: Division[];
 }
