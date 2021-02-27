@@ -1,0 +1,29 @@
+@import "../../global.scss";
+
+.navbar-root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    background-color: $nav-color;
+    padding: 12px;
+
+    a {
+        margin-right: 15px;
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    .left-pane, .right-pane {
+        display: flex;
+        align-items: center;
+        img {
+            height: 30px;
+            margin-right: 20px;
+        }
+    }
+}

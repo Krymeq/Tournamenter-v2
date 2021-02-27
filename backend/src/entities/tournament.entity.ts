@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./user.entity";
-import { RankedType } from "./ranked-type";
+import { RankedType } from "./helpers/ranked-type";
 import { Team } from "./team.entity";
 import { Division } from "./division.entity";
 

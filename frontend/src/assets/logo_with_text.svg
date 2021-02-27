@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="11.96032mm"
-   height="16.043455mm"
-   viewBox="0 0 11.96032 16.043455"
+   width="63.627464mm"
+   height="18.287216mm"
+   viewBox="0 0 63.627464 18.287216"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
@@ -64,6 +64,14 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-33.039294,-14.578593)">
+    <text
+       xml:space="preserve"
+       id="text10"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Bradley Hand ITC';-inkscape-font-specification:'Bradley Hand ITC';white-space:pre;shape-inside:url(#rect12);fill:#000080;fill-opacity:1;stroke:none;"
+       transform="matrix(1.1181373,0,0,1.2159731,-5.2918309,-4.9149912)"><tspan
+         x="44.601562"
+         y="27.446187"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Freestyle Script';-inkscape-font-specification:'Freestyle Script';fill:#000080">Turniejownik</tspan></tspan></text>
     <path
        style="fill:#ffcc00;stroke-width:0.180909"
        id="path90"

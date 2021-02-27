@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom';
+import * as authService from '../../services/auth/auth.service';
 
 interface Props {
     children: JSX.Element[] | JSX.Element;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 export const ProtectedRoute = ({children, ...rest}: Props) => {
-    let isValid = false; // here provide code to auth
+    let isValid = !!authService.getUserInfo();
     return <Route {...rest} 
         render={({location}) => isValid 
         ? children 

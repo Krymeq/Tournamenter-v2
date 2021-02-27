@@ -15,3 +15,7 @@ export const getUserInfo = (): UserData | undefined => {
         return {email: data.email, username: data.username, id: data.id};
     }
 }
+
+export const logout = () => {
+    Cookies.remove('token');
+}

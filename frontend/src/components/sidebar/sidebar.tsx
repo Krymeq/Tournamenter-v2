@@ -3,10 +3,8 @@ import './sidebar.scss';
 
 export const Sidebar = () => {
     return (
-        <div className="sidebar">
-            <div className="item">
-                huehue
-            </div>
+        <div className="sidebar-root">
+            <span>SIDEBAR HERE</span>
         </div>
     )
 }

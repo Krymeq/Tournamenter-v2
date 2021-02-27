@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { authenticateUser, getUserInfo } from '../../services/auth/auth.service';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserData } from '../../services/auth/auth.interfaces';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo_with_text.svg';
 import React from 'react';
+import * as authService from '../../services/auth/auth.service';
 import * as Yup from 'yup';
 import './LoginPage.scss';
 
@@ -17,9 +17,9 @@ export const LoginPage = () => {
     const history = useHistory();
     const location = useLocation<LocationState>();
 
-    const submitForm = (form: UserData) => {
+    const submitForm = (formState: UserData) => {
         let { from } = location.state || { from: { pathname: '/' } };
-        authenticateUser(form).then(() => history.push(from));
+        authService.authenticateUser(formState).then(() => history.push(from));
     }
 
     return (
