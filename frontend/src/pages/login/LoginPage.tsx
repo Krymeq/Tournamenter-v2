@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { UserData } from '../../services/auth/auth.interfaces';
+import { UserData } from '../../entities/user-data.entity';
 import logo from '../../assets/logo_with_text.svg';
 import React from 'react';
 import * as authService from '../../services/auth/auth.service';

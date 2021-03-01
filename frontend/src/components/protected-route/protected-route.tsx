@@ -5,6 +5,7 @@ import * as authService from '../../services/auth/auth.service';
 interface Props {
     children: JSX.Element[] | JSX.Element;
     path: string;
+    exact?: boolean;
 }
 
 export const ProtectedRoute = ({children, ...rest}: Props) => {

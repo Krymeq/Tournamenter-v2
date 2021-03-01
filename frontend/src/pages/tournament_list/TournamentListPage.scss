@@ -1,0 +1,11 @@
+@import '../../global.scss';
+
+.tournament-list-root {
+    padding: 30px;
+    flex-basis: 100%;
+
+    a, a:visited, a:link {
+        text-decoration: none;
+        color: $text-color;
+    }
+}
