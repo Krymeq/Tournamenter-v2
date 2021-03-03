@@ -1,0 +1,17 @@
+@import '../../../../global.scss';
+
+.tournament-table-root {
+    padding: 15px 30px;
+
+    .table-header {
+        @include table-row-layout;
+        text-transform: uppercase;
+        font-weight: 200;
+        letter-spacing: 1px;
+    }
+
+    a, a:visited, a:link {
+        text-decoration: none;
+        color: $text-color;
+    }
+}

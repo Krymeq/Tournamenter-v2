@@ -1,7 +1,7 @@
 @import "../../../../global.scss";
 
 .tournament-item-root {
-    padding: 15px 30px;
+    @include table-row-layout;
     margin-bottom: 10px;
     background-color: rgba($main-color, 0.5);
     box-shadow: 0 2px 3px 2px #ddd;

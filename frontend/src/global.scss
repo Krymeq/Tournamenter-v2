@@ -40,3 +40,9 @@ $highlight-color: #44b;
         background-color: $highlightColor;
     }
 }
+
+@mixin table-row-layout {
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr;
+}

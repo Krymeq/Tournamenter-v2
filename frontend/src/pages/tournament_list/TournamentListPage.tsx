@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Pagination } from '../../entities/pagination.entity';
 import { Tournament } from '../../entities/tournament.entity';
 import { getTournaments } from '../../services/tournament/tournament.service';
-import { TournamentItem } from './components/tournament-item/TournamentItem';
+import { TournamentTable } from './components/tournament-table/TournamentTable';
 import './TournamentListPage.scss';
 
 const useQuery = () => new URLSearchParams(useLocation().search)
@@ -24,9 +24,6 @@ export const TournamentListPage = () => {
     
     return (
     <div className="tournament-list-root">
-        {tournaments.map(e => 
-        <Link to={`/tournaments/${e.id}`}>
-            <TournamentItem key ={e.id} tournament={e}/>
-        </Link>)}
+        <TournamentTable tournaments={tournaments}/>
     </div>);
 }
