@@ -1,19 +1,19 @@
 export const dateToString = (date: Date): string => {
     const temp = new Date(date);
-    const dateTimeFormat = new Intl.DateTimeFormat('en-US', {
+    const dateTimeFormat = new Intl.DateTimeFormat('pl-PL', {
         year: 'numeric',
-        month: 'short',
+        month: 'long',
         day: '2-digit',
         hour: '2-digit',
         hour12: false,
         minute: '2-digit'
     });
 
-    const[ { value: month },
-         , { value: day },
+    const[ { value: day },
+         , { value: month },
          , { value: year },
          , { value: hour },
          , { value: minute }] = dateTimeFormat.formatToParts(temp);
 
-    return `${day} ${month} ${year} ${hour}:${minute}`;
+    return `${day} ${month} ${year}, ${hour}:${minute}`;
 }

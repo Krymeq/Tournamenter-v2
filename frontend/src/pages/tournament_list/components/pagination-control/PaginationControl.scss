@@ -1,0 +1,35 @@
+@import '../../../../global.scss';
+
+.pagination-control-root {
+    background-color: rgba($main-color, 1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 50px;
+
+    span {
+        margin: 0 15px;
+    }
+
+    input {
+        width: 40px;
+        margin-right: 5px;
+    }
+    
+    .icon-button {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        text-decoration: none;
+        background: none;
+        &:enabled {
+            cursor: pointer;
+            &:hover {
+                border-radius: 50px;
+                background-color: $hover-color;
+            }
+        }
+    }
+}
