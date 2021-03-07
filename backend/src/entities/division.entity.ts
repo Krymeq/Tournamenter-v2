@@ -11,10 +11,10 @@ export class Division {
     name: string;
 
     @Column({name: 'number_of_subdivisions'})
-    numberOfSubdivisions: number;
+    subdivisions: number;
 
     @Column({name: 'is_order_ascending'})
-    isOrderAscending: boolean;
+    ascending: boolean;
 
     @OneToMany(()=>Color, color => color.division)
     colors: Color[]

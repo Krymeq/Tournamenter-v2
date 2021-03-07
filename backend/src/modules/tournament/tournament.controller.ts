@@ -1,4 +1,4 @@
-import { Controller, Get, ParseIntPipe, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, Query, UseGuards } from '@nestjs/common';
 import { AuthGuard } from 'src/modules/auth/guards/auth.guard';
 import { TournamentService } from './tournament.service';
 
@@ -10,5 +10,11 @@ export class TournamentController {
     @Get()
     async getTournaments(@Query('page', ParseIntPipe) page: number) {
         return await this.tournamentService.getTournaments(page);
+    }
+
+    @UseGuards(AuthGuard)
+    @Get("/:id")
+    async getTournamentDetails(@Param('id', ParseIntPipe) id: number) {
+        return await this.tournamentService.getTournamentDetails(id);
     }
 }

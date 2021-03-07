@@ -16,7 +16,7 @@ export class Tournament {
     discipline: string;
 
     @Column({type: 'int', name: 'participants_number'})
-    participantsNumber: number;
+    participants: number;
 
     @Column({type: 'int', name: 'team_size'})
     teamSize: number;

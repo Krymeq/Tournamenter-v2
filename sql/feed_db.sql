@@ -28,13 +28,13 @@ INSERT INTO user(email, username, password) VALUES
 ('test22@gmail.com', 'test22', '$2b$10$Gs/s2WwKvPkdhLL61X.H9O6kIkWrarDxOnkggIPiQtknOXnBB0PoW');
 -- passwords are (in order): randompass, randompass, dlugosclosowahasla, wojo123xD, huGOxF2vb0D3a1sa, testtest (every test account)
 
-INSERT INTO tournament(name, discipline, participants_number, team_size, start_date, ranked, host_id) VALUES
+INSERT INTO tournament(name, discipline, participants, team_size, start_date, ranked, host_id) VALUES
 ('W i Poza Ekranem', 'League of Legends', 10, 5, '2021-03-01 19:00:00', 2, 1),
 ('FIFA 2021 EPIC SHOWDOWN', 'Fifa 2021', 16, 1, '2021-02-28 13:00:00', 0, 2),
 ('turniej w csa', 'CS:GO', 8, 5, '2021-04-05 15:00', 1, 3),
 ('GRAMY W FIFĘ AUTKAMI', 'Rocket League', 10, 3, '2021-03-02 18:00:00', 0, 4);
 
-INSERT INTO division (name, number_of_subdivisions, is_order_ascending, tournament_id) VALUES
+INSERT INTO division (name, subdivisions, ascending, tournament_id) VALUES
 ('Challenger', 1, 0, 1),
 ('Grandmaster', 1, 0, 1),
 ('Master', 1, 0, 1),
