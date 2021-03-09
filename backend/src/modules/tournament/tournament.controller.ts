@@ -17,4 +17,16 @@ export class TournamentController {
     async getTournamentDetails(@Param('id', ParseIntPipe) id: number) {
         return await this.tournamentService.getTournamentDetails(id);
     }
+
+    @UseGuards(AuthGuard)
+    @Get("/:id/teams")
+    async getAssignedTeams(@Param('id', ParseIntPipe) id: number) {
+        return await this.tournamentService.getAssignedTeams(id);
+    }
+
+    @UseGuards(AuthGuard)
+    @Get("/:id/matches")
+    async getMatches(@Param('id', ParseIntPipe) id: number) {
+        return await this.tournamentService.getMatches(id);
+    }
 }

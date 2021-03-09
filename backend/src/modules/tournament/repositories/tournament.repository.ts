@@ -7,12 +7,8 @@ export class TournamentRepository extends Repository<Tournament> {
         return await this.findOne({
             where: { id },
             relations: [
-                "teams",
-                "teams.members",
-                "teams.members.division",
-                "divisions",
-                "divisions.colors",
                 "host",
+                "matches",
             ]
         })
     }

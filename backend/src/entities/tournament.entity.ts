@@ -3,6 +3,7 @@ import { User } from "./user.entity";
 import { RankedType } from "./helpers/ranked-type";
 import { Team } from "./team.entity";
 import { Division } from "./division.entity";
+import { Match } from "./match.entity";
 
 @Entity()
 export class Tournament {
@@ -36,4 +37,9 @@ export class Tournament {
 
     @OneToMany(() => Division, division => division.tournament)
     divisions: Division[];
+
+    @OneToMany(() => Match, match => match.tournament)
+    matches: Match[];
+
+    teamCount?: number;
 }

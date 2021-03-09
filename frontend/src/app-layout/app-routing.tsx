@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { TournamentListPage } from '../pages/tournament_list/TournamentListPage';
 import { ProtectedRoute } from '../components/protected-route/protected-route';
 import { MainPage } from '../pages/main/MainPage';
-import { TournamentDetailsPage } from '../pages/tournament_details/TournamentDetails';
+import { TournamentDetailsPage } from '../pages/tournament_details/TournamentDetailsPage';
 
 export const AppRouting: React.FunctionComponent = () => (
     <Switch>

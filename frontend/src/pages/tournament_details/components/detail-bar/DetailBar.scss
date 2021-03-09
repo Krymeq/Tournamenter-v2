@@ -1,0 +1,14 @@
+@import '../../../../global.scss';
+
+.detail-bar-root {
+    background-color: $hover-color;
+    padding: 20px;
+    min-width: 300px;
+    .header {
+        font-size: 25px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $nav-color;
+    }
+}

@@ -1,4 +1,5 @@
 import { RankedType } from "./ranked-type.enum";
+import { UserData } from "./user-data.entity";
 
 export interface Tournament {
     id: number;
@@ -8,4 +9,6 @@ export interface Tournament {
     teamSize: number;
     startDate: Date;
     ranked: RankedType;
+    teamCount?: number;
+    host?: UserData;
 }

@@ -9,3 +9,7 @@ export const getTournaments = (page: number) => {
         pagination: Pagination
     }>(`${config.API_URL}/tournaments?page=${page}`, {withCredentials: true});
 }
+
+export const getTournamentDetails = (id: number) => {
+    return axios.get<Tournament>(`${config.API_URL}/tournaments/${id}`, {withCredentials: true});
+}

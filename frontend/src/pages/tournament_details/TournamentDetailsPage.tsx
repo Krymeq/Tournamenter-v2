@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { DetailBar } from './components/detail-bar/DetailBar';
+import './TournamentDetailsPage.scss';
 
 interface RouteParams {
     id: string;
@@ -7,5 +9,8 @@ interface RouteParams {
 
 export const TournamentDetailsPage = () => {
     const id = parseInt(useParams<RouteParams>()?.id);
-    return <div>HELLO FROM DI ODERSAJD {`${id}`}</div>
+    return( 
+    <div className="tournament-details-root">
+        <DetailBar tournamentId={id}/>
+    </div>)
 }
