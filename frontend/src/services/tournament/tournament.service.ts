@@ -11,5 +11,5 @@ export const getTournaments = (page: number) => {
 }
 
 export const getTournamentDetails = (id: number) => {
-    return axios.get<Tournament>(`${config.API_URL}/tournaments/${id}`, {withCredentials: true});
+    return axios.get<{tournament: Tournament}>(`${config.API_URL}/tournaments/${id}`, {withCredentials: true});
 }

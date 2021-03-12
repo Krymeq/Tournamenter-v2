@@ -11,12 +11,15 @@ export const DetailItem = ({label, value, children}: Props) => {
         <div className="label">
             {label}
         </div>
-        {value || 
-        <div className="value">
-            {value}
-        </div>}
-        {children || {
-            children
-        }}
+        {value &&
+            <div className="value">
+                {value}
+            </div>
+        }
+        {children &&
+            <div className="children-container">
+                {children}
+            </div>
+        }
     </div>
 }

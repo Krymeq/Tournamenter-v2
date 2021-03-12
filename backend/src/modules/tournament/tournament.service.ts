@@ -30,20 +30,14 @@ export class TournamentService {
         }
     }
 
-    async getTournamentDetails(id: number): Promise<Tournament> {
+    async getTournamentDetails(id: number) {
         const tournament = await this.tournamentRepository.getTournamentDetails(id);
+        const teams = await this.teamRepository.getAssignedTeams(id);
+        const matches = await this.matchRepository.getMatches(id);
         if (!tournament) 
             throw new NotFoundException("Tournament with given ID has not been found");
 
         tournament.teamCount = await this.teamRepository.count({tournament});
-        return tournament;
-    }
-
-    async getAssignedTeams(id: number) {
-        return await this.teamRepository.getAssignedTeams(id);
-    }
-
-    async getMatches(id: number) {
-        return await this.matchRepository.getMatches(id);
+        return {tournament, teams, matches};
     }
 }

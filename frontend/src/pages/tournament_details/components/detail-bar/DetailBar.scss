@@ -2,13 +2,14 @@
 
 .detail-bar-root {
     background-color: $hover-color;
-    padding: 20px;
-    min-width: 300px;
+    padding: 30px;
+    min-width: 330px;
     .header {
-        font-size: 25px;
+        font-size: 28px;
         font-weight: 100;
         letter-spacing: 1px;
         text-transform: uppercase;
         border-bottom: 1px solid $nav-color;
+        margin-bottom: 15px;
     }
 }

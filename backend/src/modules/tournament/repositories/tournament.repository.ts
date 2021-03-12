@@ -8,7 +8,6 @@ export class TournamentRepository extends Repository<Tournament> {
             where: { id },
             relations: [
                 "host",
-                "matches",
             ]
         })
     }

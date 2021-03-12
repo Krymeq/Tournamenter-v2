@@ -1,4 +1,5 @@
-export const dateToString = (date: Date): string => {
+export const dateToString = (date: Date | undefined): string => {
+    if (!date) return "";
     const temp = new Date(date);
     const dateTimeFormat = new Intl.DateTimeFormat('pl-PL', {
         year: 'numeric',

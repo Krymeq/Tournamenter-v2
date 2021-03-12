@@ -53,7 +53,9 @@ export const LoginPage = () => {
                     </div>
 
                     <div className="button-pane">
-                        <Link to='/'><button className='secondary-button'>Zarejestruj się</button></Link>
+                        <Link to='/'>
+                            <button className='secondary-button' type="button">Zarejestruj się</button>
+                        </Link>
                         <button type="submit" className='primary-button'>Zaloguj się</button>
                     </div>
                 </Form>
