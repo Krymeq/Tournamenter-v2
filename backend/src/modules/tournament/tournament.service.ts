@@ -38,6 +38,12 @@ export class TournamentService {
             throw new NotFoundException("Tournament with given ID has not been found");
 
         tournament.teamCount = await this.teamRepository.count({tournament});
+        teams.forEach(team => {
+            team.members.forEach(member => {
+                member.division.colors = member.division.colors.sort(
+                    (e1, e2) => e1.layer - e2.layer);
+            })
+        })
         return {tournament, teams, matches};
     }
 }

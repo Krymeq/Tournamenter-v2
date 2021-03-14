@@ -1,0 +1,31 @@
+@import '../../../../../../global.scss';
+
+.team-tile-root {
+    @media(min-width: 1300px) {
+        width: calc(25% - 50px);
+        padding-bottom: calc(25% - 50px);
+    }
+
+    @media(max-width: 1300px) {
+        width: calc(50% - 50px);
+        padding-bottom: calc(50% - 50px);    
+    }
+    margin-top: 15px;
+    background-color: #ddd;
+    height: 0;
+    padding: 15px;
+
+    .team-name {
+        font-size: 18px;
+        color: $text-color;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-bottom: 1px solid #bbb;
+        margin-bottom: 8px;
+    }
+
+    .division {
+        margin-left: 20px;
+        filter: drop-shadow(1px 1px 0px #999);
+    }
+}
