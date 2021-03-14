@@ -25,6 +25,8 @@ $highlight-color: #44b;
     background-blend-mode: lighten;
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @mixin button-layout($background, $textColor, $highlightColor) {
