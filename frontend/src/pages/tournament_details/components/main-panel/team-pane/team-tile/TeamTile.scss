@@ -14,7 +14,6 @@
     background-color: #ddd;
     height: 0;
     padding: 15px;
-
     .team-name {
         font-size: 18px;
         color: $text-color;
@@ -24,8 +23,18 @@
         margin-bottom: 8px;
     }
 
-    .division {
-        margin-left: 20px;
-        filter: drop-shadow(1px 1px 0px #999);
+    .member-container {
+        display: block;
+        margin-bottom: 2px;
+    
+        .division {
+            font-size: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 2px #000;
+            color: white;
+            border-radius: 50px;
+            padding: 3px 5px;
+            margin-left: 20px;
+        }
     }
 }

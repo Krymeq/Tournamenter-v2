@@ -1,16 +1,12 @@
 import React from 'react';
-import { Team } from '../../../../entities/team.entity';
 import { TeamPane } from './team-pane/TeamPane';
 import './MainPanel.scss';
 
-interface Props {
-    teams: Team[];
-}
 
-export const MainPanel = ({teams}: Props) => {
+export const MainPanel = () => {
     return (
         <div className="main-panel-root">
-            <TeamPane teams={teams}/>
+            <TeamPane/>
         </div>
     )
 }

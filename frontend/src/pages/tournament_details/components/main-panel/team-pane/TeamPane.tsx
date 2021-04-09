@@ -1,13 +1,12 @@
 import React from 'react';
-import { Team } from '../../../../../entities/team.entity';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../../redux/store';
 import { TeamTile } from './team-tile/TeamTile';
 import './TeamPane.scss';
 
-interface Props {
-    teams: Team[];
-}
-
-export const TeamPane = ({teams}: Props) => {
+export const TeamPane = () => {
+    const teams = useSelector((state: RootState) => state.teams);
+    
     return (
         <div className="team-pane-root">
             {teams.map(team => <TeamTile key= {team.id} team={team}/>)}

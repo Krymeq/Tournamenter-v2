@@ -8,19 +8,12 @@ interface Props {
 }
 
 const getGradient = (colors: Color[]) => {
-    const basicStyle = {
-        backgroundClip: 'text',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-    }
     if (colors.length > 1)
         return { 
             backgroundImage: `radial-gradient(circle, ${colors.map(e => e.color).join(',')})`,
-            ...basicStyle
         }
     return { 
-        backgroundColor: colors[0].color, 
-        ...basicStyle
+        backgroundColor: colors[0].color
     };
 }
 
@@ -29,7 +22,7 @@ export const TeamTile = ({ team }: Props) => {
         <div className="team-tile-root">
             <div className="team-name">{team.name}</div>
             { team.members.map(member =>
-                <div key={member.id}>
+                <div key={member.id} className="member-container">
                     <span className="nick">{member.nickname}</span>
                     {member.division &&
                         <span className="division" style={

@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import reportWebVitals from './reportWebVitals';
 import { MainRouting } from './main-routing';
+import { Provider } from 'react-redux';
+import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import store from './redux/store';
+import React from 'react';
+import './index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className='app'>
-      <MainRouting/>
-    </div>
+    <Provider store={store}>
+      <div className='app'>
+        <MainRouting/>
+      </div>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

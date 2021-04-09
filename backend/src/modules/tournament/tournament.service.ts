@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Tournament } from 'src/entities/tournament.entity';
+import { AddTeamDto } from './dtos/add-team.dto';
 import { MatchRepository } from './repositories/match.repository';
 import { TeamRepository } from './repositories/team.repository';
 import { TournamentRepository } from './repositories/tournament.repository';
@@ -45,5 +46,18 @@ export class TournamentService {
             })
         })
         return {tournament, teams, matches};
+    }
+
+    async addTeam(tournamentId: number, addTeamDto: AddTeamDto) {
+        const accessCode = new Array(6).fill(0).reduce(
+            (prev: string) => prev + String.fromCharCode(Math.round(Math.random() * 25) + 65), "");
+        await this.teamRepository.create({
+            name: addTeamDto.name,
+            members: addTeamDto.members, 
+            accessCode, 
+            tournament: {
+                id: tournamentId
+            }
+        })
     }
 }
