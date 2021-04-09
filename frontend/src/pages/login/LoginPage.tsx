@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserData } from '../../entities/user-data.entity';
 import logo from '../../assets/logo_with_text.svg';
-import React from 'react';
+import React, { useState } from 'react';
 import * as authService from '../../services/auth/auth.service';
 import * as Yup from 'yup';
 import './LoginPage.scss';
@@ -16,10 +16,13 @@ interface LocationState {
 export const LoginPage = () => {
     const history = useHistory();
     const location = useLocation<LocationState>();
+    const [isFailedLogin, setLoginStatus] = useState(false);
 
     const submitForm = (formState: UserData) => {
         let { from } = location.state || { from: { pathname: '/' } };
-        authService.authenticateUser(formState).then(() => history.push(from));
+        authService.authenticateUser(formState)
+        .then(() => history.push(from))
+        .catch(() => setLoginStatus(true));
     }
 
     return (
@@ -35,7 +38,7 @@ export const LoginPage = () => {
                     <img src={logo} alt="Turniejownik" />
                     <div className="form-item">
                         <label htmlFor="username">Nazwa użytkownika</label>
-                        <Field name="username" type="text" />
+                        <Field name="username" type="text"/>
                         <span>
                             <ErrorMessage name="username" />
                         </span>
@@ -52,8 +55,14 @@ export const LoginPage = () => {
                         </span>
                     </div>
 
+                    { isFailedLogin && 
+                        <div className="error-label">
+                            <span>Hasło bądź nazwa użytkownika są nieprawidłowe.</span>
+                        </div>
+                    }
+
                     <div className="button-pane">
-                        <Link to='/'>
+                        <Link to='/register'>
                             <button className='secondary-button' type="button">Zarejestruj się</button>
                         </Link>
                         <button type="submit" className='primary-button'>Zaloguj się</button>
