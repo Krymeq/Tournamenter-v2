@@ -3,7 +3,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserData } from '../../entities/user-data.entity';
 import logo from '../../assets/logo_with_text.svg';
 import React, { useState } from 'react';
-import * as authService from '../../services/auth/auth.service';
+import * as authService from '../../services/auth/user.service';
 import * as Yup from 'yup';
 import './LoginPage.scss';
 

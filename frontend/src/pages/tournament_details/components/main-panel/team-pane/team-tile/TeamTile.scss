@@ -1,19 +1,9 @@
 @import '../../../../../../global.scss';
+@import '../TeamPane.scss';
 
 .team-tile-root {
-    @media(min-width: 1300px) {
-        width: calc(25% - 50px);
-        padding-bottom: calc(25% - 50px);
-    }
+    @include tile-layout();
 
-    @media(max-width: 1300px) {
-        width: calc(50% - 50px);
-        padding-bottom: calc(50% - 50px);    
-    }
-    margin-top: 15px;
-    background-color: #ddd;
-    height: 0;
-    padding: 15px;
     .team-name {
         font-size: 18px;
         color: $text-color;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserInfo } from './user-info/user-info';
-import { logout } from '../../services/auth/auth.service';
+import { logout } from '../../services/auth/user.service';
 import { PowerSettingsNew } from '@material-ui/icons';
 import logo from '../../assets/logo.svg';
 import './navbar.scss';

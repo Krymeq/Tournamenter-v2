@@ -1,3 +1,4 @@
+import { PlusOne } from '@material-ui/icons';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
@@ -6,10 +7,13 @@ import './TeamPane.scss';
 
 export const TeamPane = () => {
     const teams = useSelector((state: RootState) => state.teams);
-    
+
     return (
         <div className="team-pane-root">
-            {teams.map(team => <TeamTile key= {team.id} team={team}/>)}
+            {teams.map(team => <TeamTile key={team.id} team={team} />)}
+            <div className="new-team-btn">
+                <PlusOne/>    
+            </div>
         </div>
     );
 }

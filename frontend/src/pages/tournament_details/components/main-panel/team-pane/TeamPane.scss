@@ -1,7 +1,27 @@
+@mixin tile-layout {
+    @media(min-width: 1300px) {
+        width: calc(25% - 50px);
+        padding-bottom: calc(25% - 50px);
+    }
+
+    @media(max-width: 1300px) {
+        width: calc(50% - 50px);
+        padding-bottom: calc(50% - 50px);    
+    }
+    margin-top: 15px;
+    margin-left: 12px;
+    background-color: #ddd;
+    height: 0;
+    padding: 15px;
+}
+
 .team-pane-root {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     padding-bottom: 15px;
+
+    .new-team-btn {
+        @include tile-layout();
+    }
 }

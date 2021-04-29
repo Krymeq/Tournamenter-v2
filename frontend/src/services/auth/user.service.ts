@@ -20,3 +20,7 @@ export const getUserInfo = (): UserData | undefined => {
 export const logout = () => {
     Cookies.remove('token');
 }
+
+export const registerUser = async (data: UserData) => {
+    return await axios.post(`${config.API_URL}/user/register`, data);
+}

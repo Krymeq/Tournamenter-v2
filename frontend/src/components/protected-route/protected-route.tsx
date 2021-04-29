@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom';
-import * as authService from '../../services/auth/auth.service';
+import * as authService from '../../services/auth/user.service';
 
 interface Props {
     children: JSX.Element[] | JSX.Element;

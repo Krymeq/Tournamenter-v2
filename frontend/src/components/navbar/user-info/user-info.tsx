@@ -1,5 +1,5 @@
 import React from 'react';
-import { getUserInfo } from '../../../services/auth/auth.service';
+import { getUserInfo } from '../../../services/auth/user.service';
 import './user-info.scss';
 
 export const UserInfo = () => {

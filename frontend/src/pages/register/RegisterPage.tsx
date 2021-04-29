@@ -1,10 +1,17 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/logo_with_text.svg';
 import './RegisterPage.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { registerUser } from '../../services/auth/user.service';
+import { AxiosError } from 'axios';
 
+interface LocationState {
+    from: {
+        pathname: string;
+    };
+}
 
 interface FormData {
     username: string,
@@ -13,11 +20,28 @@ interface FormData {
     confirmPassword: string
 }
 
-const submitForm = (formData: FormData) => {
-    console.log(formData);
-}
-
 export const RegisterPage = () => {
+    const history = useHistory();
+    const location = useLocation<LocationState>();
+    const [errorMessage, setErrorMessage] = useState<string>('');
+
+    const submitForm = (formData: FormData) => {
+        let { from } = location.state || { from: { pathname: '/' } };
+        registerUser(formData)
+            .then(() => {
+                history.push(from)
+                setTimeout(function () {
+                    alert('Użytkownik zarejestrowany pomyślnie.');
+                }, 1);
+            })
+            .catch((e: AxiosError) => {
+                console.log(e.toJSON());
+                if (e.response?.status === 400) {
+                    setErrorMessage(e.response?.data.message);
+                }
+            });
+    }
+
     return <div className="register-root">
         <Formik
             onSubmit={values => submitForm(values)}
@@ -72,6 +96,9 @@ export const RegisterPage = () => {
                         <ErrorMessage name="confirmPassword" />
                     </span>
                 </div>
+
+                <span className="error-msg">{errorMessage}</span>
+                
                 <div className="button-pane">
                     <Link to='/login'>
                         <button className='secondary-button' type="button">Wróć</button>

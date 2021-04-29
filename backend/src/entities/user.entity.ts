@@ -1,15 +1,17 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
 import { Tournament } from "./tournament.entity";
 
 @Entity()
+@Unique("e-mail", ["email"])
+@Unique("username", ["username"])
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({unique: true})
+    @Column()
     email: string;
 
-    @Column({unique: true})
+    @Column()
     username: string;
 
     @Column({select: false})
@@ -18,3 +20,4 @@ export class User {
     @OneToMany(()=>Tournament, tournament => tournament.host)
     hostedTournaments: Tournament[];
 }
+

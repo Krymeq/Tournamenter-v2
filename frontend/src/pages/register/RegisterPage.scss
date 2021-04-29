@@ -47,6 +47,12 @@
             justify-content: space-between;
         }
 
+        .error-msg {
+            width: calc(min(250px, 100%));
+            color: red;
+            font-size: 12px;
+        }
+
         input {
             outline: none;
             border: none;
